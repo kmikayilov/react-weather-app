@@ -1,0 +1,57 @@
+.details {
+	width: 300px;
+	height: 350px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: space-around;
+
+	.detail {
+		width: 140px;
+		height: 170px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		border: 1px solid #ced4da;
+		border-radius: 10px;
+		box-shadow: 0 1rem 4rem rgba(21, 34, 50, 0.08);
+
+		.icon {
+			width: 50px;
+		}
+
+		.title {
+			font-size: 16px;
+		}
+
+		.value {
+			font-size: 20px;
+		}
+
+		&.feels_like {
+		}
+
+		&.wind {
+			.value {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				font-size: 15px;
+
+				.icon {
+					width: 30px;
+				}
+			}
+		}
+
+		&.humidity {
+		}
+
+		&.pressure {
+		}
+	}
+}

@@ -1,0 +1,18 @@
+.hour-cards {
+	margin-bottom: 20px;
+
+	.hour-card {
+		width: calc((100% / 8) - 20px);
+
+		.temp {
+			margin-bottom: 20px;
+		}
+
+		.icon {
+			margin-bottom: 20px;
+		}
+
+		.date {
+		}
+	}
+}

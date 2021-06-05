@@ -1,0 +1,30 @@
+@import "./assets/scss/_components";
+
+.App {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #08aeea;
+	background-image: linear-gradient(45deg, #08aeea 0%, #2af598 100%);
+
+	& .header {
+		width: 60%;
+		padding: 20px;
+		margin-bottom: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		& .form-control {
+			margin-right: 10px;
+		}
+	}
+
+	& .result {
+		padding: 20px;
+		width: 100%;
+	}
+}
