@@ -1,0 +1,12 @@
+.day-cards {
+	.day-card {
+		width: calc((100% / 5) - 20px);
+
+		.temp {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 40px;
+		}
+	}
+}
