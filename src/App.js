@@ -6,12 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Forecast from "./components/Forecast/Forecast";
 
 const App = () => {
-	const [city, setCity] = useState("Baku");
+	const [city, setCity] = useState("");
 	const [forecast, setForecast] = useState(null);
+	const [isSearched, setIsSearched] = useState(false);
 
 	const inputHandler = (e) => setCity(e.target.value);
 
 	const submitHandler = async () => {
+		setIsSearched(true);
 		let data = null;
 		let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}`);
 		if (res.ok) data = await res.json();
@@ -31,13 +33,15 @@ const App = () => {
 				</Button>
 			</div>
 			<div className="result">
-				{forecast ? (
-					<Forecast forecast={formForecast(forecast)} location={forecast && `${forecast.city.name}, ${forecast.city.country}`} />
-				) : (
-					<h3 className="text-center" style={{ color: "red" }}>
-						Not found!
-					</h3>
-				)}
+				{isSearched ? (
+					forecast ? (
+						<Forecast forecast={formForecast(forecast)} location={forecast && `${forecast.city.name}, ${forecast.city.country}`} />
+					) : (
+						<h3 className="text-center" style={{ color: "red" }}>
+							Not found!
+						</h3>
+					)
+				) : null}
 			</div>
 		</div>
 	);
